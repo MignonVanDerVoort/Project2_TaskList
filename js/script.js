@@ -80,3 +80,22 @@ document.querySelector(".sort").addEventListener("click", function () {
   document.getElementById("cards").innerHTML = "";
   createCards();
 });
+
+/* still to do: make function changeColor: */
+
+function changeColor() {
+  let color = "green";
+  let text = "Low Importance";
+
+  if (tasks[i].importance <= 1) {
+  } else if (tasks[i].importance <= 3) {
+    color = "yellow";
+    text = "Medium importance";
+  } else {
+    color = "red";
+    text = "High importance";
+  }
+
+  document.querySelectorAll(".card-header")[i].style.backgroundColor = color;
+  document.querySelectorAll(".card-header")[i].innerHTML = text;
+}
