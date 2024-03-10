@@ -23,14 +23,12 @@ let tasks = [
 let cards = document.getElementById("cards");
 
 function createCards() {
-  let color = "success"; /* ???????????????????? */
-
   tasks.forEach((element) => {
     cards.innerHTML += `
     <div class="col-sm">
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                <a class="btn priorityBtn btn-${color}"> Show priority </a>
+                Priority
             </div>
             <img src="${element.image}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -70,28 +68,15 @@ function createCards() {
         }
       });
     });
-
-    /*  ???????????? */
-    document.querySelector(".sort").addEventListener("click", function () {
-      tasks.sort(function (a, b) {
-        return a.importance - b.importance;
-      });
-    });
-    /* ?????????????? */
-    let priorityBtns = document.querySelectorAll(".priorityBtn");
-
-    priorityBtns.forEach((element, i) => {
-      element.addEventListener("click", function () {
-        if (tasks[i].importance == 0 || 1) {
-          color = "success";
-        } else if (tasks[i].importance == 2 || 3) {
-          color = "warning";
-        } else {
-          color = "danger";
-        }
-      });
-    });
   });
 }
 
 createCards();
+
+document.querySelector(".sort").addEventListener("click", function () {
+  tasks.sort(function (a, b) {
+    return b.importance - a.importance;
+  });
+  document.getElementById("cards").innerHTML = "";
+  createCards();
+});
