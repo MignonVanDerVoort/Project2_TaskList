@@ -1,13 +1,13 @@
-#cards{
-    display: flex;
-    justify-content: space-around;
+#cards {
+  display: flex;
+  justify-content: space-around;
 }
 
-.btn-warning{
-    margin: 10px;
-    margin-left: 20px;
+.btn-warning {
+  margin: 10px;
+  margin-left: 20px;
 }
 
-.card{
-    margin: 10px;
+.card {
+  margin: 10px;
 }
