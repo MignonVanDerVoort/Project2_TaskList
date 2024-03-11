@@ -28,7 +28,6 @@ function createCards() {
     <div class="col-sm">
         <div class="card" style="width: 18rem;">
             <div class="card-header text-light">
-                Priority
             </div>
             <img src="${element.image}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -45,7 +44,7 @@ function createCards() {
     `;
     changeColor(i);
 
-    // I used my own special green, yellow and red colours here, hope that is fine
+    // I used my own special green, yellow and red colours here, as it fits in better with my colour-scheme, hope that's fine! :)
     function changeColor(i) {
       let color = "#557A46";
       let text = "Low Importance";

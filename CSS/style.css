@@ -13,9 +13,24 @@
 }
 
 .btn {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .priority {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgb(44, 44, 49);
+  color: white;
+}
+
+.footerLinks {
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
 }
