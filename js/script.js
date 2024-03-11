@@ -23,7 +23,7 @@ let tasks = [
 let cards = document.getElementById("cards");
 
 function createCards() {
-  tasks.forEach((element) => {
+  tasks.forEach((element, i) => {
     cards.innerHTML += `
     <div class="col-sm">
         <div class="card" style="width: 18rem;">
@@ -37,10 +37,32 @@ function createCards() {
                 <p class="priority card-text">Priority level: ${element.importance}</p>
                 <a class="btn btn-outline-primary up">Up priority</a>
                 <a class="btn btn-outline-danger lower">Lower priority</a>
+                <a class="btn btn-success">Done</a>
+                <a class="btn btn-outline-danger">Delete</a>
             </div>
         </div>
     </div>
     `;
+    changeColor(i);
+
+    function changeColor(i) {
+      let color = "green";
+      let text = "Low Importance";
+
+      if (tasks[i].importance <= 1) {
+      } else if (tasks[i].importance <= 3) {
+        color = "yellow";
+        text = "Medium importance";
+      } else {
+        color = "red";
+        text = "High importance";
+      }
+
+      document.querySelectorAll(".card-header")[i].style.backgroundColor =
+        color;
+      document.querySelectorAll(".card-header")[i].innerHTML = text;
+    }
+
     let upBtns = document.querySelectorAll(".up");
 
     upBtns.forEach((element, i) => {
@@ -51,6 +73,7 @@ function createCards() {
           document.querySelectorAll(".priority")[
             i
           ].innerHTML = `Priority level: ${tasks[i].importance}`;
+          changeColor(i);
         }
       });
     });
@@ -65,6 +88,7 @@ function createCards() {
           document.querySelectorAll(".priority")[
             i
           ].innerHTML = `Priority level: ${tasks[i].importance}`;
+          changeColor(i);
         }
       });
     });
@@ -80,22 +104,3 @@ document.querySelector(".sort").addEventListener("click", function () {
   document.getElementById("cards").innerHTML = "";
   createCards();
 });
-
-/* still to do: make function changeColor: */
-
-function changeColor() {
-  let color = "green";
-  let text = "Low Importance";
-
-  if (tasks[i].importance <= 1) {
-  } else if (tasks[i].importance <= 3) {
-    color = "yellow";
-    text = "Medium importance";
-  } else {
-    color = "red";
-    text = "High importance";
-  }
-
-  document.querySelectorAll(".card-header")[i].style.backgroundColor = color;
-  document.querySelectorAll(".card-header")[i].innerHTML = text;
-}
