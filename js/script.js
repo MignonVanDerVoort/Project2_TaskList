@@ -27,7 +27,7 @@ function createCards() {
     cards.innerHTML += `
     <div class="col-sm">
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header text-light">
                 Priority
             </div>
             <img src="${element.image}" class="card-img-top" alt="...">
@@ -38,23 +38,24 @@ function createCards() {
                 <a class="btn btn-outline-primary up">Up priority</a>
                 <a class="btn btn-outline-danger lower">Lower priority</a>
                 <a class="btn btn-success">Done</a>
-                <a class="btn btn-outline-danger">Delete</a>
+                <a class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
     `;
     changeColor(i);
 
+    // I used my own special green, yellow and red colours here, hope that is fine
     function changeColor(i) {
-      let color = "green";
+      let color = "#557A46";
       let text = "Low Importance";
 
       if (tasks[i].importance <= 1) {
       } else if (tasks[i].importance <= 3) {
-        color = "yellow";
+        color = "#ECB365";
         text = "Medium importance";
       } else {
-        color = "red";
+        color = "#B80000";
         text = "High importance";
       }
 
