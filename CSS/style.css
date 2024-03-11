@@ -27,10 +27,8 @@ footer {
   color: white;
 }
 
-.footerLinks {
-  a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem;
-  }
+.footerLinks a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
 }
