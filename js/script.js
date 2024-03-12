@@ -73,7 +73,7 @@ function createCards() {
             <div class="card-body">
                 <h5 class="card-title">${element.taskName}</h5>
                 <p class="card-text">${element.description}</p>
-                <p class="priority card-text">Priority level: ${element.importance}</p>
+                <p class="priority card-text">Priority level: <span class="level">${tasks[i].importance}</span></p>
                 <a class="btn btn-outline-primary up">&#8593; Up priority</a>
                 <a class="btn btn-outline-danger lower">&#8595; Lower priority</a>
                 <a class="btn btn-success">&#10003; Done</a>
@@ -112,7 +112,7 @@ function createCards() {
           tasks[i].importance++;
           document.querySelectorAll(".priority")[
             i
-          ].innerHTML = `Priority level: ${tasks[i].importance}`;
+          ].innerHTML = `Priority level: <span class="level">${tasks[i].importance}</span>`;
           changeColor(i);
         }
       });
@@ -127,7 +127,7 @@ function createCards() {
           tasks[i].importance--;
           document.querySelectorAll(".priority")[
             i
-          ].innerHTML = `Priority level: ${tasks[i].importance}`;
+          ].innerHTML = `Priority level: <span class="level">${tasks[i].importance}</span>`;
           changeColor(i);
         }
       });

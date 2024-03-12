@@ -20,6 +20,12 @@
   margin-bottom: 10px;
 }
 
+.level {
+  background-color: antiquewhite;
+  padding: 5px;
+  border-radius: 50%;
+}
+
 footer {
   text-align: center;
   padding: 1.5rem;
